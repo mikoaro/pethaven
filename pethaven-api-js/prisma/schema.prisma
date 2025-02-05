@@ -1,0 +1,72 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Pet {
+  id                    Int      @id @default(autoincrement())
+  name                  String
+  type                  PetType
+  breed                 String
+  age                   String
+  sex                   PetSex
+  color                 String
+  size                  String
+  spayed_neutered       Boolean
+  microchip_id          String
+  description           String
+  location              Json
+  medical_disclaimer    Json
+  behavioral_disclaimer Json
+  adoption_details      Json
+  status                String
+  needs_sponsorship     Boolean
+  images                String[]
+}
+
+enum PetType {
+  Dog
+  Cat
+  Others
+}
+
+enum PetSex {
+  Male
+  Female
+}
+
+model Order {
+  id              Int      @id @default(autoincrement())
+  username        String
+  firstname       String
+  lastname        String
+  status          String
+  microchip_id    String
+  amount          String
+  donation_amount String
+  total           String
+  total_d         String
+  createdAt       DateTime @default(now()) @db.Timestamp(6)
+  pet_name        String
+}
+
+model Contact {
+  id        Int      @id @default(autoincrement())
+  username  String
+  firstname String
+  lastname  String
+  status    String
+  email     String
+  phone     String
+  createdAt DateTime @default(now()) @db.Timestamp(6)
+}

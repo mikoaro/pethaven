@@ -1,0 +1,68 @@
+{
+  "name": "File Archive App",
+  "description": {
+    "short": "App for file archive",
+    "long": "This app is designed to allow for users to archive a signed DocuSign agreement"
+  },
+   "icon": {
+    "data": "iVBORw0KGgoAAAANSUhEUgAAAGAAAABgCAYAAADimHc4AAAACXBIWXMAACxLAAAsSwGlPZapAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAADcSURBVHgB7dwxCsMwEADBc8j/v+zUgTRJZNY2M6ULF1oOhECaAQAAAAAA7m778G0fjvS25o8hJUBMgJgAMQFi23xvX/ivK1uyDiYgJkBMgJgAMQFizzm/f8+mTr07MwExAWICxASICRC7wi7o1mdMJiAmQEyAmAAxAWICxASICRATICZATICYADEBYgLEBIgJEBMgJkBMgJgAMQFiAsQEiAkQEyAmQEyAmAAxAWICxASICRATICZATICYADEBYgLEBIitvCfsxd0fmICYADEBYgLEBAAAAAAAADjYCwxUBYWYirDwAAAAAElFTkSuQmCC",
+    "mediaType": "image/png"
+  },
+  "screenshots": [],
+  "publisher": {
+    "name": "John Doe",
+    "email": "john.doe@gmail.com",
+    "phone": "800-867-5309",
+    "website": "www.johndoe.com"
+  },
+  "termsOfServiceUrl": "www.johndoe.com/tos",
+  "privacyUrl": "www.johndoe.com/privacy",
+  "supportUrl": "www.johndoe.com/support",
+  "connections": [
+    {
+      "name": "authentication",
+      "description": "secure connection to the file archive proxy",
+      "type": "oauth2",
+      "params": {
+        "provider": "CUSTOM",
+        "scopes": [],
+        "clientId": "fa539c8553ed7ec880d74a05bfcdedc0dbdcde3c0b4b0493a74fb4421a074221e85f05e7b975424c4701c7b1baa8bcb2526ff8b4f0f9271bd5cc3c6fbc3e68f5",
+        "clientSecret": "47ea5828c407814638d9f07967f07c0ea123fea809f755f6a65773c552e6830a9897f517416f968515a64be7d529af28b55736b90e3c287ebb5e193eddd6b9b4",
+        "customConfig": {
+          "tokenUrl": "https://a3c2-2600-1700-70-b690-fc36-1d2c-b0b7-4226.ngrok-free.app/api/oauth/token",
+          "authorizationUrl": "https://a3c2-2600-1700-70-b690-fc36-1d2c-b0b7-4226.ngrok-free.app/api/oauth/authorize",
+          "authorizationParams": {
+            "access_type": "offline",
+            "prompt": "consent"
+          },
+          "authorizationMethod": "header",
+          "scopeSeparator": " ",
+          "requiredScopes": []
+        }
+      }
+    }
+  ],
+  "extensions": [
+    {
+      "name": "My Archive Extension",
+      "description": "using to archive an envelope",
+      "template": "EAP.Version1.SpecifiedArchive",
+      "actionReferences": ["My Archive Action"]
+    }
+  ],
+  "actions": [
+    {
+      "name": "My Archive Action",
+      "description": "something about archiving to a proxy",
+      "template": "Document.Version1.SpecifiedArchive",
+      "connectionsReference": "authentication",
+      "params": {
+        "uri": "https://a3c2-2600-1700-70-b690-fc36-1d2c-b0b7-4226.ngrok-free.app/api/archive"
+      }
+    }
+  ],
+  "publicationRegions": [
+    "US"
+  ],
+  "distribution": "PUBLIC"
+}

@@ -1,0 +1,32 @@
+{
+  "name": "pethaven-api-test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "nodemon",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@prisma/client": "^6.3.1",
+    "app-root-path": "^3.1.0",
+    "axios": "^1.7.9",
+    "cors": "^2.8.5",
+    "docusign-esign": "^8.0.1",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "express-session": "^1.18.1",
+    "morgan": "^1.10.0",
+    "multer": "1.4.5-lts.1",
+    "pinata": "^1.10.1",
+    "session": "^0.1.0",
+    "stripe": "^17.6.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.9"
+  }
+}
